@@ -7,7 +7,9 @@
 
 	<title>Crystal Game!</title>
 	 
-	 <link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -21,16 +23,18 @@
 </head>
 <body>
 
-	<div class="container">
-		<div class="row">
+	<div class="container-fluid">
+		<div id="head" class="row">
 			<div class="col-xs-12">
-				Crystal Collector!
+				<h1>Crystal Collector!</h1>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-xs-12">
-				Instruction text.
+				<h3 id="instructions">You will start with a randomly generated goal score. At the start of each game each of the four gems, the ruby, the sapphire, the amethyst and the emerald will be given a random value. When clicked each gem will add your to your current score.
+
+				You win a game when you match the goal score. If you go beyond that you will lose. Every time you win or lose a new goal score will be generated and the gems will have new values. Good Luck!</h3>
 			</div>
 		</div>
 
@@ -41,7 +45,7 @@
    		 			<h3 class="panel-title">Score Goal</h3>
   				</div>
   				<div class="panel-body">
-    				Current Score Goal
+    				<span id="currentGoal"></span>
   				</div>
 				</div>
 			</div>
@@ -52,8 +56,8 @@
    		 			<h3 class="panel-title">Current Record</h3>
   				</div>
   				<div class="panel-body">
-    				<section>Wins: <span class="wins"></span></section>
-    				<section>Losses: <span class="losses"></span></section>
+    				<section>Wins: <span id="wins"></span></section>
+    				<section>Losses: <span id="losses"></span></section>
   				</div>
 				</div>
 			</div>
@@ -62,30 +66,42 @@
 		<div class="row">
 			<div class="col-xs-6">
 				<div class="panel panel-default">
-  				<div class="panel-heading">
-   		 			<h3 class="panel-title">Current Score</h3>
-  				</div>
-  				<div class="panel-body">
-    				Current Score
-  				</div>
+  					<div class="panel-heading">
+   		 				<h3 class="panel-title">Current Score</h3>
+  					</div>
+  					<div class="panel-body">
+    					<span id="currentScore">Current Score</span>
+  					</div>
 				</div>
 			</div>
 
 			<div class="col-xs-6">
 				<div class="panel panel-default">
-  				<div class="panel-heading">
-   		 			<h3 class="panel-title">Gems</h3>
-  				</div>
-  				<div class="panel-body">
-    				<img src="" alt="">
-    				<img src="" alt="">
-    				<img src="" alt="">
-    				<img src="" alt="">
-  				</div>
+  					<div class="panel-heading">
+   		 				<h3 class="panel-title">Gems</h3>
+  					</div>
+  					<div class="panel-body">
+  						<div class="row">
+  							<div class="col-xs-3">
+    							<img id="ruby" class="img-responsive crystal-image" src="images/ruby.jpg" alt="ruby">
+    						</div>
+    						<div class="col-xs-3">
+    							<img id="sapphire" class="img-responsive crystal-image" src="images/sapphire.jpg" alt="sapphire">
+    						</div>
+    						<div class="col-xs-3">
+    							<img id="amethyst" class="img-responsive crystal-image" src="images/amethyst.jpg" alt="amethyst">
+    						</div>
+    						<div class="col-xs-3">
+    							<img id="emerald" class="img-responsive crystal-image" src="images/emerald.jpg" alt="emerald">
+    						</div>
+    					</div>
+  					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript" src="javascript/game.js"></script>
 	
 </body>
 </html>

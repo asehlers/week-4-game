@@ -6,10 +6,14 @@
 
 .container-fluid{
 	background-image: url("../images/gems.jpg");
-	background-image: repeat;
+	/*background-image: repeat;*/
 }
 
 #instructions{
 	background-color:black;
 	color:white;
+}
+
+.panel{
+	text-align:center;
 }
